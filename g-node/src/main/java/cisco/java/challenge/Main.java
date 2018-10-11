@@ -36,9 +36,6 @@ public class Main {
 
 
     public static void main(String[] args) {
-
-
-        //Use the graph given in the task as an example:
          
 
         //instantiate the graph nodes
@@ -52,9 +49,6 @@ public class Main {
         GNodeImpl nodeH = new GNodeImpl("H");
         GNodeImpl nodeI = new GNodeImpl("I");
 
-        //additional node for testing further
-        GNodeImpl nodeX = new GNodeImpl("X");
-        GNodeImpl nodeY = new GNodeImpl("Y");
 
 
         //set children
