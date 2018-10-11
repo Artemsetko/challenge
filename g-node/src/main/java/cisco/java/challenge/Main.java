@@ -67,18 +67,10 @@ public class Main {
         GNode[] children_of_nodeC = new GNode[] {nodeG, nodeH, nodeI};
         nodeC.setChildren(children_of_nodeC);
 
-//        //additional nodes for testing further
-//        GNode[] children_of_nodeE = new GNode[] {nodeX};
-//        nodeE.setChildren(children_of_nodeE);
-//
-//        GNode[] children_of_nodeX = new GNode[] {nodeY};
-//        nodeX.setChildren(children_of_nodeX);
-
 
         /**
          * Problem 1: Get an ArrayList of all nodes present in the graph (no duplicates)
          */
-
         nodeA.printMsg("\nSolutions to problems 1 & 2");
 
         //1a. walk the graph and get the list of all graph nodes
@@ -87,13 +79,10 @@ public class Main {
         nodeA.printMsg("\n1) ArrayList containing every GNode in the graph are: " + resultNodes);
 
 
-
-
         /**
          * Problem 2: Get an ArrayList of ArrayLists representing all
          * possible paths through the graph starting at 'node'
          */
-
         ArrayList<ArrayList<GNode>> arrayListOfPaths = nodeA.paths(nodeA);
 
         nodeA.printMsg("\n2) The ArrayList of ArrayLists presenting all possible paths are: " + arrayListOfPaths);

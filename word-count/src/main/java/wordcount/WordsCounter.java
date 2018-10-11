@@ -8,6 +8,11 @@ import java.util.*;
 
 public class WordsCounter {
 
+    /**
+     *
+     * @param strings from file
+     * @return map<String, Integer>, where key is a word, value - frequency in a file
+     */
     public Map<String, Integer> wordCount(List<String> strings) {
         Map<String, Integer> map = new HashMap<String, Integer>();
         for (String s : strings) {
@@ -22,6 +27,12 @@ public class WordsCounter {
         return map;
     }
 
+    /**
+     *
+     * @param filename
+     * @return all words from File, exclude non-Words.
+     * @throws IOException
+     */
     public List<String> readWordsFromFile(String filename) throws IOException {
         InputStream is = Main.class.getResourceAsStream("/" + filename);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
@@ -38,7 +49,8 @@ public class WordsCounter {
 
                 for (String word : words) {
                     String cleanedUpWord = word
-                            .replaceAll("\\W", "");
+                            .replaceAll("\\W", "")
+                            .replaceAll("_", "");
 
                     wordsOfFile.add(cleanedUpWord);
                 }

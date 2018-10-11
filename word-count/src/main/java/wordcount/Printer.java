@@ -8,12 +8,14 @@ public class Printer {
 
     }
 
+    //print words frequency to console
     public static void printResult(Map<String, Integer> words) {
         for (Map.Entry<String, Integer> entry : words.entrySet()) {
             System.out.println(entry.getValue() + " " + entry.getKey());
         }
     }
 
+    //FAQ
     public static void printInfo() {
         System.out.println("This program produce a count of all the different \"words\" in a text file" +
                 "\n" + "and prints result in the console " +
