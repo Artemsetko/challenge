@@ -22,7 +22,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>cisco.java.challenge.gnode.Main</mainClass>
+                            <mainClass>cisco.java.challenge.cisco.java.challenge.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
