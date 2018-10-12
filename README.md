@@ -1,4 +1,4 @@
-#Coding Challenge
+# Coding Challenge . 
 Please complete the following assignments. For GNode, please use Java. For Word Count, you can use any language you prefer. Compilable/runnable code is required. Code with runnable tests is preferred.
 Please publish to Github or dropbox/google drive and e-mail the link.
 
