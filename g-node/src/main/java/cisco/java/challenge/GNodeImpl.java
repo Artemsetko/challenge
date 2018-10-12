@@ -116,7 +116,7 @@ public class GNodeImpl implements GNode {
 
 
         //recursively explore each node and child nodes
-        while (!stack.isEmpty()) {
+        if (!stack.isEmpty()) {
             GNode currentNode = stack.peek();
 
             GNode[] children = currentNode.getChildren();
@@ -134,8 +134,6 @@ public class GNodeImpl implements GNode {
                 stack.pop();
                 tempNodeList.remove(tempNodeList.size() - 1);
             }
-
-            break;
         }
 
         return finalNodeList;
