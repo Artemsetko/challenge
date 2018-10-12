@@ -1,9 +1,9 @@
-# Coding Challenge . 
+# Coding Challenge 
 Please complete the following assignments. For GNode, please use Java. For Word Count, you can use any language you prefer. Compilable/runnable code is required. Code with runnable tests is preferred.
 Please publish to Github or dropbox/google drive and e-mail the link.
 
 
-##GNode
+## GNode
 Imagine we have an interface "GNode" that looks like this:
 
 ```java
@@ -54,11 +54,12 @@ paths(A) = ((A B E) (A B F) (A C G) (A C H) (A C I) (A D))
 ```
 
 
-##Word Count
+## Word Count
 Write a quick and dirty program (Shell, Python, Perl, Java, Lisp, C++, APL, or
 whatever) to produce a count of all the different "words" in a text file. Use
 any definition of word that makes logical sense or makes your job easy.
 The output might look like this:
+```
     6 a
     14 the
     9 of
@@ -69,4 +70,6 @@ The output might look like this:
     7 energy
     6 to
     ...
+
+```
 For this input file, the word "a" occured 17 times, "the" 14 times, etc.
