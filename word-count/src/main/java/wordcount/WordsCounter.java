@@ -14,15 +14,9 @@ public class WordsCounter {
      * @return map<String, Integer>, where key is a word, value - frequency in a file
      */
     public Map<String, Integer> wordCount(List<String> strings) {
-        Map<String, Integer> map = new HashMap<String, Integer>();
+        Map<String, Integer> map = new TreeMap<>();
         for (String s : strings) {
-
-            if (!map.containsKey(s)) {  // first time we've seen this string
-                map.put(s, 1);
-            } else {
-                int count = map.get(s);
-                map.put(s, count + 1);
-            }
+            map.merge(s, 1, (oldVal, increment) -> oldVal + increment);
         }
         return map;
     }

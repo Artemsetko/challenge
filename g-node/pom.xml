@@ -22,13 +22,20 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>cisco.java.challenge.cisco.java.challenge.Main</mainClass>
+                            <mainClass>cisco.java.challenge.cisco.java.challenge.launcher.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+    </dependencies>
 
 
 </project>

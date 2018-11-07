@@ -1,6 +1,11 @@
-package cisco.java.challenge;
+package cisco.java.challenge.launcher;
+
+import cisco.java.challenge.graph.GNode;
+import cisco.java.challenge.graph.Graph;
+import cisco.java.challenge.graph.GraphHandler;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class gives the solutions to Problems 1 & 2. You should run this file to see the results.
@@ -8,7 +13,7 @@ import java.util.ArrayList;
  * Compiled using
  * java version "1.8.0_181" |  Java(TM) SE Runtime Environment (build 1.8.0_181-b13)
  *
- * GNodeImpl.java is a class that implements the GNode interface (GNode.java) provided.
+ * GraphHandler.java is a class that implements the GNode interface (GNode.java) provided.
  *
  *
  *
@@ -39,17 +44,17 @@ public class Main {
          
 
         //instantiate the graph nodes
-        GNodeImpl nodeA = new GNodeImpl("A");
-        GNodeImpl nodeB = new GNodeImpl("B");
-        GNodeImpl nodeC = new GNodeImpl("C");
-        GNodeImpl nodeD = new GNodeImpl("D");
-        GNodeImpl nodeE = new GNodeImpl("E");
-        GNodeImpl nodeF = new GNodeImpl("F");
-        GNodeImpl nodeG = new GNodeImpl("G");
-        GNodeImpl nodeH = new GNodeImpl("H");
-        GNodeImpl nodeI = new GNodeImpl("I");
+        Graph nodeA = new Graph("A");
+        Graph nodeB = new Graph("B");
+        Graph nodeC = new Graph("C");
+        Graph nodeD = new Graph("D");
+        Graph nodeE = new Graph("E");
+        Graph nodeF = new Graph("F");
+        Graph nodeG = new Graph("G");
+        Graph nodeH = new Graph("H");
+        Graph nodeI = new Graph("I");
 
-
+        GraphHandler graphHandler = new GraphHandler();
 
         //set children
         GNode[] children_of_nodeA = new GNode[] {nodeB, nodeC, nodeD};
@@ -65,21 +70,21 @@ public class Main {
         /**
          * Problem 1: Get an ArrayList of all nodes present in the graph (no duplicates)
          */
-        nodeA.printMsg("\nSolutions to problems 1 & 2");
+        graphHandler.printMsg("\nSolutions to problems 1 & 2");
 
         //1a. walk the graph and get the list of all graph nodes
-        ArrayList<GNode> resultNodes = nodeA.walkGraph(nodeA);
+        List<GNode> resultNodes = graphHandler.walkGraph(nodeA);
 
-        nodeA.printMsg("\n1) ArrayList containing every GNode in the graph are: " + resultNodes);
+        graphHandler.printMsg("\n1) ArrayList containing every GNode in the graph are: " + resultNodes);
 
 
         /**
          * Problem 2: Get an ArrayList of ArrayLists representing all
          * possible paths through the graph starting at 'node'
          */
-        ArrayList<ArrayList<GNode>> arrayListOfPaths = nodeA.paths(nodeA);
+        ArrayList<ArrayList<GNode>> arrayListOfPaths = graphHandler.paths(nodeA);
 
-        nodeA.printMsg("\n2) The ArrayList of ArrayLists presenting all possible paths are: " + arrayListOfPaths);
+        graphHandler.printMsg("\n2) The ArrayList of ArrayLists presenting all possible paths are: " + arrayListOfPaths);
 
     }
 

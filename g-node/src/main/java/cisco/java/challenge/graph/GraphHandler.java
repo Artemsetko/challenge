@@ -1,7 +1,9 @@
-package cisco.java.challenge;
+package cisco.java.challenge.graph;
 
 import java.util.ArrayList;
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * This class implements GNode Interface to solve the task.
@@ -9,13 +11,7 @@ import java.util.Stack;
  * @author Artem Sietko
  *
  */
-public class GNodeImpl implements GNode {
-
-    //Name of the graph node
-    private String nodeName;
-
-    //Children in the node
-    private GNode[] children;
+public class GraphHandler {
 
     //An array of size zero to represent no child in node
     GNode[] EMPTY_LIST = new GNode[0];
@@ -25,7 +21,7 @@ public class GNodeImpl implements GNode {
     private ArrayList<GNode> listOfGNodes = new ArrayList<>();
 
     //Stack data structure used for getting paths in the graph
-    private Stack<GNode> stack = new Stack<>();
+    private Deque<GNode> stack = new LinkedList<>();
 
     //ArrayList of ArrayList of GNodes representing all possible paths in the graph
     private ArrayList<ArrayList<GNode>> finalNodeList = new ArrayList<>(); //final result
@@ -34,54 +30,13 @@ public class GNodeImpl implements GNode {
     private ArrayList<GNode> tempNodeList = new ArrayList<>(); //temp result
 
 
-    //constructor
-    public GNodeImpl(String nodeName) {
-        this.nodeName = nodeName;
-    }
-
-
-    /**
-     * Setter for the children nodes in the graph
-     *
-     * @param children
-     */
-    public void setChildren(GNode[] children) {
-        int arrLength = children.length;
-        int index = 0; //counter for array index
-        this.children = new GNode[arrLength];
-
-        for (GNode child : children) {
-            this.children[index] = child;
-            index = index + 1;
-        }
-    }
-
-    @Override
-    public String getName() {
-
-        return this.nodeName;
-    }
-
-    @Override
-    public GNode[] getChildren() {
-
-        if (this.children == null) {
-            return EMPTY_LIST;
-
-        } else {
-            return this.children;
-        }
-
-    }
-
-
     /**
      * Returns an ArrayList containing every GNode in the graph
      *
      * @param node
      * @return the Arraylist of every GNode in the graph.
      */
-    public ArrayList walkGraph(GNode node) {
+    public List<GNode> walkGraph(GNode node) {
 
         //name of current node
         String currentNodeName = node.getName();
@@ -109,7 +64,7 @@ public class GNodeImpl implements GNode {
      * @param node
      * @return ArrayList of ArrayLists of GNodes of all possible paths starting at node in the graph
      */
-    public ArrayList paths(GNode node) {
+    public ArrayList<ArrayList<GNode>> paths(GNode node) {
 
         stack.push(node);
         tempNodeList.add(node);
@@ -138,15 +93,6 @@ public class GNodeImpl implements GNode {
 
         return finalNodeList;
     }
-
-
-
-
-    @Override
-    public String toString() {
-        return this.getName();
-    }
-
 
 
     /**

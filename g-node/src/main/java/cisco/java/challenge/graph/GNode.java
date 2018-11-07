@@ -1,4 +1,4 @@
-package cisco.java.challenge;
+package cisco.java.challenge.graph;
 
 /**
  * This interface definition is given as defining a graph.
